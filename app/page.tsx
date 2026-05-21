@@ -4,6 +4,7 @@ import {
   Download,
   Mail,
   MapPin,
+  PhoneCall,
   Sparkles,
 } from "lucide-react";
 
@@ -44,6 +45,13 @@ const links: LinkItem[] = [
     icon: Mail,
     accent: "cyan",
   },
+  {
+    label: "Phone",
+    value: "+91 8923955041",
+    href: "tel:+918923955041",
+    icon: PhoneCall,
+    accent: "lime",
+  }
 ];
 
 const accentClass = {
@@ -118,7 +126,7 @@ export default function Page() {
 
           <div className="mt-6 grid grid-cols-3 gap-2 font-mono-display">
             <Stat label="cgpa" value="9.27" />
-            <Stat label="projects" value="05+" />
+            <Stat label="projects" value="10+" />
             <Stat label="code commits" value="1k+" />
           </div>
 
@@ -180,6 +188,15 @@ export default function Page() {
           <p className="mt-1 opacity-60">© 2026 · devansh.tyagi</p>
         </footer>
       </div>
+
+      <a
+        href="/Devansh_Tyagi_Contact.vcf"
+        download
+        className="fixed bottom-5 right-5 z-20 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card/90 px-4 py-2.5 font-mono-display text-[10px] uppercase tracking-[0.18em] text-foreground shadow-card backdrop-blur-md transition-all hover:border-primary hover:shadow-glow active:scale-[0.98]"
+      >
+        <Download className="h-4 w-4 text-primary" />
+        Save Contact
+      </a>
     </main>
   );
 }
