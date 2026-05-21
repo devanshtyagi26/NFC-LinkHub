@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowUpRight,
   Database,
@@ -43,7 +45,7 @@ const links: LinkItem[] = [
     value: "tyagidevansh3@gmail.com",
     href: "mailto:tyagidevansh3@gmail.com",
     icon: Mail,
-    accent: "cyan",
+    accent: "yellow",
   },
   {
     label: "Phone",
@@ -58,13 +60,25 @@ const accentClass = {
   cyan: "text-primary",
   lime: "text-secondary",
   magenta: "text-accent",
+  yellow: "text-yellow-500",
 };
 
 const accentBg = {
   cyan: "bg-primary/10 border-primary/30",
   lime: "bg-secondary/10 border-secondary/30",
   magenta: "bg-accent/10 border-accent/30",
+  yellow: "bg-yellow-500/10 border-yellow-500/30",
 };
+
+const meCardString =
+  "MECARD:N:Tyagi,Devansh;TEL:+918923955041;EMAIL:tyagidevansh3@gmail.com;URL:https://linkedin.com/in/tyagi-devansh;;";
+
+function openContactForm() {
+  const link = document.createElement("a");
+  link.href =
+    "data:text/x-vcard;charset=utf-8," + encodeURIComponent(meCardString);
+  link.click();
+}
 
 export default function Page() {
   return (
@@ -127,7 +141,7 @@ export default function Page() {
           <div className="mt-6 grid grid-cols-3 gap-2 font-mono-display">
             <Stat label="cgpa" value="9.27" />
             <Stat label="projects" value="10+" />
-            <Stat label="code commits" value="1k+" />
+            <Stat label="commits" value="1k+" />
           </div>
 
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -189,13 +203,14 @@ export default function Page() {
         </footer>
       </div>
 
-      <a
-        href="/Devansh_Tyagi_Contact.vcf"
+      <button
+        type="button"
+        onClick={openContactForm}
         className="fixed bottom-5 right-5 z-20 inline-flex items-center gap-2 rounded-full border border-primary/50 bg-card/70 px-4 py-2.5 font-mono-display text-[10px] uppercase tracking-[0.18em] text-foreground shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-sm backdrop-saturate-150 supports-backdrop-filter:bg-card/55 transition-all hover:border-primary hover:bg-card/80 hover:shadow-glow active:scale-[0.98]"
       >
         <Download className="h-4 w-4 text-primary" />
         Save Contact
-      </a>
+      </button>
     </main>
   );
 }
