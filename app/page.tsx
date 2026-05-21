@@ -70,7 +70,7 @@ export default function Page() {
               <span className="ping-ring absolute inline-flex h-full w-full rounded-full bg-secondary" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary" />
             </span>
-            online
+            OPEN TO OPPORTUNITIES
           </span>
           <span className="flex items-center gap-1.5">
             <Sparkles className="h-3 w-3 text-primary" />
@@ -119,16 +119,15 @@ export default function Page() {
           <div className="mt-6 grid grid-cols-3 gap-2 font-mono-display">
             <Stat label="cgpa" value="9.27" />
             <Stat label="projects" value="05+" />
-            <Stat label="stack" value="PY/JS" />
+            <Stat label="code commits" value="1k+" />
           </div>
 
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            Final-year CS student at{" "}
-            <span className="text-foreground">University of Delhi</span>,
-            specialising in AI/ML. I build neural-net models, deploy them with
-            <span className="text-foreground"> FastAPI</span>, and ship
-            full-stack apps with
-            <span className="text-foreground"> Next.js and MERN</span>.
+            <span className="text-foreground">AI/ML developer</span> {" "}
+             and final-year CS student at
+             <span className="text-foreground"> University of Delhi.</span>{" "}
+             I train neural networks, build high-performance backends with 
+             <span className="text-foreground"> FastAPI</span>, and deploy full-stack applications.
           </p>
 
           <div className="mt-4 flex items-center gap-1.5 font-mono-display text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
