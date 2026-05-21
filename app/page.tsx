@@ -47,7 +47,7 @@ const links: LinkItem[] = [
   },
   {
     label: "Phone",
-    value: "+91 8923955041",
+    value: "+91 89239 55041",
     href: "tel:+918923955041",
     icon: PhoneCall,
     accent: "lime",
@@ -119,7 +119,7 @@ export default function Page() {
               </p>
               <p className="mt-1 flex items-center gap-1 font-mono-display text-[10px] uppercase tracking-[0.2em] text-secondary">
                 <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                open_to_work · grad 26
+                 CLASS OF 26
               </p>
             </div>
           </div>
@@ -191,8 +191,7 @@ export default function Page() {
 
       <a
         href="/Devansh_Tyagi_Contact.vcf"
-        download
-        className="fixed bottom-5 right-5 z-20 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card/90 px-4 py-2.5 font-mono-display text-[10px] uppercase tracking-[0.18em] text-foreground shadow-card backdrop-blur-md transition-all hover:border-primary hover:shadow-glow active:scale-[0.98]"
+        className="fixed bottom-5 right-5 z-20 inline-flex items-center gap-2 rounded-full border border-primary/50 bg-card/70 px-4 py-2.5 font-mono-display text-[10px] uppercase tracking-[0.18em] text-foreground shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-sm backdrop-saturate-150 supports-backdrop-filter:bg-card/55 transition-all hover:border-primary hover:bg-card/80 hover:shadow-glow active:scale-[0.98]"
       >
         <Download className="h-4 w-4 text-primary" />
         Save Contact
