@@ -2,7 +2,9 @@ BEGIN:VCARD
 VERSION:3.0
 N:Tyagi;Devansh;;;
 FN:Devansh Tyagi
-EMAIL;TYPE=INTERNET:tyagidevansh3@gmail.com
+TITLE:AI Engineer
 TEL;TYPE=CELL:+918923955041
-URL:https://linkedin.com/in/tyagi-devansh
+EMAIL:tyagidevansh3@gmail.com
+URL:https://github.com/devanshtyagi26
+ADR;TYPE=HOME:;;New Delhi;;;India
 END:VCARD

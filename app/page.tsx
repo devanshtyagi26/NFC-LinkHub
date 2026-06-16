@@ -53,7 +53,7 @@ const links: LinkItem[] = [
     href: "tel:+918923955041",
     icon: PhoneCall,
     accent: "lime",
-  }
+  },
 ];
 
 const accentClass = {
@@ -70,14 +70,32 @@ const accentBg = {
   yellow: "bg-yellow-500/10 border-yellow-500/30",
 };
 
-const meCardString =
-  "MECARD:N:Tyagi,Devansh;TEL:+918923955041;EMAIL:tyagidevansh3@gmail.com;URL:https://linkedin.com/in/tyagi-devansh;;";
+// Fill in your vCard string
+const meCardString = `BEGIN:VCARD
+VERSION:3.0
+N:Tyagi;Devansh;;;
+FN:Devansh Tyagi
+TITLE:AI Engineer
+TEL;TYPE=CELL:+918923955041
+EMAIL:tyagidevansh3@gmail.com
+URL:https://github.com/devanshtyagi26
+ADR;TYPE=HOME:;;New Delhi;;;India
+END:VCARD`;
 
+// Replace your openContactForm function with this:
 function openContactForm() {
+  const blob = new Blob([meCardString], { type: "text/vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
   const link = document.createElement("a");
-  link.href =
-    "data:text/x-vcard;charset=utf-8," + encodeURIComponent(meCardString);
+  link.href = url;
+  link.download = "Devansh_Tyagi.vcf"; // .vcf extension is critical
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
+
+  // Clean up the object URL after a short delay
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 export default function Page() {
@@ -133,7 +151,7 @@ export default function Page() {
               </p>
               <p className="mt-1 flex items-center gap-1 font-mono-display text-[10px] uppercase tracking-[0.2em] text-secondary">
                 <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                 CLASS OF 26
+                CLASS OF 26
               </p>
             </div>
           </div>
@@ -145,11 +163,12 @@ export default function Page() {
           </div>
 
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            <span className="text-foreground">AI/ML developer</span> {" "}
-             and final-year CS student at
-             <span className="text-foreground"> University of Delhi.</span>{" "}
-             I train neural networks, build high-performance backends with 
-             <span className="text-foreground"> FastAPI</span>, and deploy full-stack applications.
+            <span className="text-foreground">AI/ML developer</span> and
+            final-year CS student at
+            <span className="text-foreground"> University of Delhi.</span> I
+            train neural networks, build high-performance backends with
+            <span className="text-foreground"> FastAPI</span>, and deploy
+            full-stack applications.
           </p>
 
           <div className="mt-4 flex items-center gap-1.5 font-mono-display text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
@@ -158,7 +177,7 @@ export default function Page() {
           </div>
 
           <a
-            href="/Devansh_Tyagi_Resume.pdf"
+            href="https://www.devanshtyagi.me/Devansh_Tyagi_Resume.pdf"
             download
             className="group mt-5 flex items-center justify-between gap-3 rounded-xl border border-primary/40 bg-linear-to-r from-primary/15 via-secondary/10 to-accent/15 px-4 py-3 transition-all hover:border-primary hover:shadow-glow active:scale-[0.99]"
           >
